@@ -1,0 +1,9 @@
+.in{
+    display: grid;
+    grid-template-columns: 25% 80%;
+    font-family: "Times New Roman", Times, serif;
+}
+.Signup{
+    display: grid;
+    grid-template-rows: 50% 50%;
+}

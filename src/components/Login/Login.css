@@ -1,0 +1,22 @@
+.Login{
+    
+    display:flex;
+    
+    
+    justify-content: flex-end;
+    
+    background-color: #85bb65;
+    padding:20px ;
+    padding-right: 100px;
+    font-family: "Times New Roman", Times, serif;
+    
+}
+.fp{
+    position: absolute;
+    
+    padding-top: 60px;
+    
+}
+#iEmail{
+    margin-right: 15px;
+}
