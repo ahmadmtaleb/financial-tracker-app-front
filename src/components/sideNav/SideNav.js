@@ -4,15 +4,13 @@ import SideNav, { Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-siden
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import './SideNav.css'
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
+   
     Link
   } from "react-router-dom";
   import {Button} from 'reactstrap'
 
-export default class Sidebar extends React.Component{
-    render(){
+function SideBar (props){
+   
     return(
 
 <div>
@@ -24,36 +22,47 @@ export default class Sidebar extends React.Component{
 >
     <SideNav.Toggle/>
     <SideNav.Nav defaultSelected="home">
-        <NavItem eventKey="I&E">
+       <NavItem eventKey="I&E">
             <NavIcon>
                 <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
             </NavIcon>
             <NavText>
-                Income & Expences
+               <Link to='/'>Income & Expences</Link> 
             </NavText>
         </NavItem>
-        <NavItem eventKey="saving">
+
+       <NavItem eventKey="saving">
             <NavIcon>
                 <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
             </NavIcon>
             <NavText>
-                saving
+            <Link to='/Saving'>  saving</Link>
             </NavText>
         </NavItem>
+
         <NavItem eventKey="report">
             <NavIcon>
                 <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
             </NavIcon>
             <NavText>
-                Reports
+            <Link to='/Reports'> Reports</Link>
             </NavText>
         </NavItem>
+
         <NavItem eventKey="category">
             <NavIcon>
                 <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
             </NavIcon>
             <NavText>
-                Category
+            <Link to='/Category'>Category</Link>
+            </NavText>
+        </NavItem>
+        <NavItem eventKey="Transaction">
+            <NavIcon>
+                <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+            </NavIcon>
+            <NavText>
+            <Link to='/Transaction'>Transaction</Link>
             </NavText>
         </NavItem>
         
@@ -73,7 +82,9 @@ export default class Sidebar extends React.Component{
 </SideNav>
 </div>
     )
-}}
+}
+export default SideBar
+
 
 
 

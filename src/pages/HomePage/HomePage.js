@@ -11,6 +11,7 @@ import './HomePage.css'
 
 
 
+
 export default class Home extends React.Component{
 
     constructor(props){
@@ -56,7 +57,14 @@ calculateExpen=(expences)=>{
     render(){
         return(
             <div>
-               <div className="sider"><SideNav></SideNav></div> 
+               <div className="sider">
+                   
+                       
+                        
+
+                  
+                   
+                   </div> 
                 
                <div className="cont"> 
                <Header></Header>

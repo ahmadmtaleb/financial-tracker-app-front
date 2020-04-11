@@ -4,4 +4,4 @@ import './index.css';
 import App from './App';
 import Sidebar from '../src/components/sideNav/SideNav'
 import HomePage from '../src/pages/HomePage/HomePage'
-ReactDOM.render(<HomePage />, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));
