@@ -1,0 +1,10 @@
+*{
+    text-align: center;
+}
+.slide{
+    position: fixed;
+    background-color: teal;
+}
+.logout{
+    margin-top: 260px;
+}
