@@ -1,7 +1,7 @@
 import React from 'react'
-import SideNav from '../../components/sideNav/SideNav'
+
 import Table from '../../components/Table/Table'
-import Header from '../../components/Header/Header'
+
 import Total from '../../components/Total/Total'
 
 import './HomePage.css'

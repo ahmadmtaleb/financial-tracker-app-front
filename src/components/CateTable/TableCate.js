@@ -1,9 +1,9 @@
 import React from 'react'
 
 
-import { Table, Input } from 'reactstrap';
+import { Table} from 'reactstrap';
 
-import { Component } from 'react'
+
 
 import './TableCate.css'
 import 'bootstrap/dist/css/bootstrap.min.css';

@@ -6,7 +6,7 @@
     background-color:teal;
 }
 .logout{
-    margin-top: 260px;
+  
 }
 .links{
     color: white;
@@ -21,3 +21,5 @@
     text-decoration: none;
     color:cyan;
 }
+.nait-logout{
+    margin-top: 260px;}

@@ -1,13 +1,13 @@
 
 import React from 'react'
-import SideNav, { Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
+import SideNav, {  NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import './SideNav.css'
 import {
    
     Link
   } from "react-router-dom";
-  import {Button} from 'reactstrap'
+ 
 
 function SideBar (props){
    
@@ -64,7 +64,7 @@ function SideBar (props){
         </NavItem></Link>
         
         
-       <Link className="links" to='/Landing'> <NavItem className="nait" eventKey="logout" className="logout">
+       <Link className="links" to='/Landing'> <NavItem className="nait-logout" eventKey="logout" >
             <NavIcon>
                 <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
             </NavIcon>
