@@ -21,7 +21,10 @@ function SideBar (props){
     className="slide"
 >
     <SideNav.Toggle/>
+    
     <SideNav.Nav defaultSelected="home">
+    <div className="userN">   <h6 className="namef">Welcome</h6>
+<h6 className="namef">{props.name}</h6></div>
     <Link className="links"  to='/'>  <NavItem className="nait"  eventKey="I&E">
     <NavIcon>
                 <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />

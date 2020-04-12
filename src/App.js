@@ -13,6 +13,12 @@ import Header from '../src/components/Header/Header'
 
 export default class App extends  React.Component {
 
+  constructor(props){
+    super(props);
+    this.state={
+      UserName:"Mahmoud"
+    }
+  }
   render(){
   return (
     <>
@@ -23,7 +29,7 @@ export default class App extends  React.Component {
           <div>
           <Route path='/'  >
             <Header></Header>
-          <Sidebar></Sidebar>
+          <Sidebar name={this.state.UserName}></Sidebar>
           
           <div>
             

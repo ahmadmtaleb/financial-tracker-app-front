@@ -5,9 +5,7 @@
     position: fixed;
     background-color:teal;
 }
-.logout{
-  
-}
+
 .links{
     color: white;
     text-decoration: none;
@@ -22,4 +20,11 @@
     color:cyan;
 }
 .nait-logout{
-    margin-top: 260px;}
+    margin-top: 160px;}
+    .namef{
+        color: seashell;
+        
+    }
+    .userN{
+        margin-bottom: 80px;
+    }
