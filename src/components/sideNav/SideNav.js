@@ -22,59 +22,56 @@ function SideBar (props){
 >
     <SideNav.Toggle/>
     <SideNav.Nav defaultSelected="home">
-       <NavItem eventKey="I&E">
-            <NavIcon>
+    <Link className="links"  to='/'>  <NavItem className="nait"  eventKey="I&E">
+    <NavIcon>
                 <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
             </NavIcon>
             <NavText>
-               <Link to='/'>Income & Expences</Link> 
+                
+             Dashboard
+                
             </NavText>
-        </NavItem>
+        </NavItem></Link>
 
-       <NavItem eventKey="saving">
+        <Link className="links"  to='/Report'>  <NavItem className="nait" eventKey="Report">
             <NavIcon>
                 <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
             </NavIcon>
             <NavText>
-            <Link to='/Saving'>  saving</Link>
+             Report
             </NavText>
-        </NavItem>
+        </NavItem></Link>
 
-        <NavItem eventKey="report">
-            <NavIcon>
-                <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
-            </NavIcon>
-            <NavText>
-            <Link to='/Reports'> Reports</Link>
-            </NavText>
-        </NavItem>
+       
 
-        <NavItem eventKey="category">
+        <Link className="links" to='/Category'> <NavItem className="nait"   eventKey="category">
             <NavIcon>
                 <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
             </NavIcon>
             <NavText>
-            <Link to='/Category'>Category</Link>
+            Category
             </NavText>
-        </NavItem>
-        <NavItem eventKey="Transaction">
+        </NavItem></Link>
+
+
+        <Link className="links"  to='/Transaction'>  <NavItem className="nait"  eventKey="Transaction">
             <NavIcon>
                 <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
             </NavIcon>
             <NavText>
-            <Link to='/Transaction'>Transaction</Link>
+               Transaction
             </NavText>
-        </NavItem>
+        </NavItem></Link>
         
         
-        <NavItem eventKey="logout" className="logout">
+       <Link className="links" to='/Landing'> <NavItem className="nait" eventKey="logout" className="logout">
             <NavIcon>
                 <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
             </NavIcon>
             <NavText>
                 Logout
             </NavText>
-        </NavItem>
+        </NavItem></Link>
        
         
        

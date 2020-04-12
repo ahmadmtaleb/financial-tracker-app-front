@@ -8,3 +8,16 @@
 .logout{
     margin-top: 260px;
 }
+.links{
+    color: white;
+    text-decoration: none;
+    border: none;
+   
+}
+.nait{
+    margin-bottom: 40px;
+}
+:hover.links{
+    text-decoration: none;
+    color:cyan;
+}

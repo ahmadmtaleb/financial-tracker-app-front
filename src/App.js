@@ -8,6 +8,7 @@ import Transaction from './pages/TransactionPage/TransactionPage';
 import Saving from './pages/SavingPage/SavingPage';
 import ReportPage from './pages/ReportPage/ReportPage';
 import CategoryPage from './pages/CategoryPage/CategoryPage';
+import Header from '../src/components/Header/Header'
 
 
 export default class App extends  React.Component {
@@ -21,6 +22,7 @@ export default class App extends  React.Component {
         <Route path='/'>
           <div>
           <Route path='/'  >
+            <Header></Header>
           <Sidebar></Sidebar>
           
           <div>
