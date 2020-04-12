@@ -1,34 +1,25 @@
-import React, {Component} from "react";
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, {Component} from 'react';
 import './Login.css';
-
 
 class Login extends Component
 {
-  render()
-  { 
-    return (
-      <div className="forum"> 
-        <Form inline className="Login">
-          <FormGroup>
-            <Label for="exampleEmail" hidden>Email</Label>
-            <Input type="email" name="email" id="iEmail" placeholder="Email" />
-          </FormGroup>
-          {' '}
-          <FormGroup >
-            <Label for="examplePassword" hidden>Password</Label>
-            <Input type="password" name="password" id="iEmail" placeholder="Password" />
-            
-          </FormGroup>
-          {' '}
-          <Button  color="success">Login</Button>
-          <div className="fp"><a href="#" target="_blank">Forgotten account?</a></div>
-        </Form>
+    render()
+    {
+        return(
+            <form className="login_form" action ='' method=''>
+                    <label className="login_item"><div className="login_item_text">Email<br /></div> 
+                    <input type ="mail" name="username" placeholder="Email"/>
+                    </label>
+                    
+                    <label className="login_item"><div className="login_item_text">Password<br /></div>
+                        <input type="password" name="password" placeholder="Password"/>
+                    </label>
+                    <label className="login_item" id="login_btn"> 
+                        <button type="submit" id ="login_btn_self">Log In</button>
+                    </label>
+                </form>
 
-      </div>
-    );
-  }
+        );
+    }
 }
-
 export default Login;

@@ -1,22 +1,43 @@
-.Login{
-    
+.login_form
+{
     display:flex;
-    
-    
     justify-content: flex-end;
-    
-    background-color: #85bb65;
-    padding:20px ;
-    padding-right: 100px;
-    font-family: "Times New Roman", Times, serif;
-    
+    padding-right: 70px;
+    background-color: #01cb34;
+
 }
-.fp{
-    position: absolute;
-    
-    padding-top: 60px;
-    
+.login_item
+{
+    margin:10px;
 }
-#iEmail{
-    margin-right: 15px;
+#login_btn
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.login_item_text
+{
+    text-align: start;
+    padding-left: 5px;
+    font-weight: bold;
+}
+#login_btn_self
+{
+    margin-bottom: 2px;
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 7px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+#login_btn_self:hover
+{
+    background-color: #bf4c0b;
+    color: black;
+    box-shadow: 10%;
 }
