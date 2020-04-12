@@ -70,7 +70,7 @@ constructor(props){
               
              
               <Form.Item label="Confirm">
-                <Button className="btna">Add</Button>
+                <Button type="primary" className="btna">Add</Button>
               </Form.Item>
             </Form>
           </div>

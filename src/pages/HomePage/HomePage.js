@@ -25,7 +25,7 @@ export default class Home extends React.Component{
             Ammount:50},
         {Ammount:40}],
         listExpences:[],
-         titel:["Fixing Income","Recuring Income","Fixing Expences","Recuring Expences"]   
+         titel:["Income"," Expencses",]   
 
         }
     }
@@ -72,8 +72,7 @@ calculateExpen=(expences)=>{
                      <div className="transTable">
                      <Table list={this.state.listIncome} name={this.state.titel[0]} ></Table>
                      <Table list={this.state.listIncome} name={this.state.titel[1]} ></Table>
-                     <Table list={this.state.listIncome} name={this.state.titel[2]} ></Table>
-                     <Table list={this.state.listIncome} name={this.state.titel[3]} ></Table>
+                     
                          </div>  
                 
                 <Total income={this.calculateIncome(this.state.income)}
