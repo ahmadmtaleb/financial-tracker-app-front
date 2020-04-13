@@ -68,7 +68,7 @@ calculateExpen=(expences)=>{
                 
                <div className="cont"> 
                
-                 <div className="body">
+                 <div className="home_page_main_container">
                      <div className="transTable">
                      <Table list={this.state.listIncome} name={this.state.titel[0]} ></Table>
                      <Table list={this.state.listIncome} name={this.state.titel[1]} ></Table>

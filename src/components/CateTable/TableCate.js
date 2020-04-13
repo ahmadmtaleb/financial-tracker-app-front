@@ -22,7 +22,7 @@ function TabelForm(props) {
 
   return (
 
-    <div className="Tabcat">
+    <div className="Table_cat_main">
      
       <h3>{props.name}</h3>
 

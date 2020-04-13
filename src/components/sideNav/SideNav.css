@@ -1,25 +1,25 @@
-*{
+.side_nav_main_container{
     text-align: center;
 }
-.slide{
+.side_nav_slide_container{
     position: fixed;
     background-color:teal;
 }
 
-.links{
+.side_nav_links{
     color: white;
     text-decoration: none;
     border: none;
    
 }
-.nait{
+.side_nav_nait{
     margin-bottom: 40px;
 }
-:hover.links{
+:hover.side_nav_links{
     text-decoration: none;
     color:cyan;
 }
-.nait-logout{
+.side_nav_nait-logout{
     margin-top: 160px;}
     .namef{
         color: seashell;

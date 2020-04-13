@@ -10,7 +10,7 @@ class LandingPage extends Component
         return(
             <div>
                 <Login />
-                <div className="LandingPage_main">
+                <div className="LandingPage_main_ah">
                     <Register />
                 </div>
             </div>

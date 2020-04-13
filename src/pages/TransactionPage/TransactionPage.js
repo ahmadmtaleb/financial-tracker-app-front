@@ -25,7 +25,7 @@ constructor(props){
 
     render(){
         return(
-            <div className="fi" >
+            <div className="transaction_page_fi" >
                 <div></div>
                 <div >
                 <h3>Add Transaction</h3>

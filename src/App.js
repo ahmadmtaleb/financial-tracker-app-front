@@ -27,7 +27,7 @@ export default class App extends  React.Component {
         
         <Route path='/'>
           <div>
-          <Route path='/'  >
+          <Route path='/'>
             <Header></Header>
           <Sidebar name={this.state.UserName}></Sidebar>
           

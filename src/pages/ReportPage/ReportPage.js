@@ -7,7 +7,7 @@ import './ReportPage.css'
 export default class ReportPage extends React.Component{
     render(){
         return(
-            <div className="rep">
+            <div className="report_page_main_container">
                 <div><ChartsPage></ChartsPage></div>
                 <div><BarCharts></BarCharts></div>
 
