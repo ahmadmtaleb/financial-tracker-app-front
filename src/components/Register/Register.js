@@ -71,6 +71,7 @@ class Register extends Component
     async handleSubmit(event)
     {
         event.preventDefault();
+
         
         try 
         {
@@ -81,7 +82,7 @@ class Register extends Component
             if (result.success) 
             {
                 console.log("done")
-                alert("You account has been created! \n You can Log In now!");
+                alert("Your account has successfully been created! \n You can Log In now!");
             } 
             else 
             {
@@ -91,9 +92,8 @@ class Register extends Component
         catch (err) 
         {
             console.log('err', err)
-            alert("\t\tYour account has not been created! \n Please re-register with all the exact information.");
+            alert("Your account has not been created! \n Please re-fill with all the exact information.");
         } 
-    
     }
 
     render()

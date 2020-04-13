@@ -1,15 +1,10 @@
 import React from 'react'
 
-import Table from '../../components/Table/Table'
+import TableForm from '../../components/Table/Table'
 
 import Total from '../../components/Total/Total'
 
 import './HomePage.css'
-
-
-
-
-
 
 
 export default class Home extends React.Component{
@@ -17,74 +12,86 @@ export default class Home extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            income:0,
-            expences:0,
-
-            listIncome:[{
-                
-            Ammount:50},
-        {Ammount:40}],
-        listExpences:[],
-         titel:["Income"," Expencses",]   
+            incomes:0,
+            expenses:0,
+            listIncomes:[],
+            listExpenses:[],
+            tableTitle:["Incomes"," Expenses",]   
 
         }
     }
-
-
-  
-calculateIncome=(income)=>{
-    income=0;
-  for(let i=0;i<this.state.listIncome.length;i++){
-   
-    income = income +this.state.listIncome[i].Ammount
+    async componentDidMount() {
+        const token = localStorage.getItem('token');
+        if (token !== undefined && token !== null) {
     
-   console.log(income)
-  }
-  return income;
-}
-calculateExpen=(expences)=>{
-    expences=0;
-  for(let i=0;i<this.state.listExpences.length;i++){
-    expences= expences +this.state.listExpences[i].Ammount;
-   
-   
-  }
-  return expences;
-}
+          try {
+            const response = await fetch(`http://localhost:8000/api/transactions/find-by-type/expense?token=${token}`);
+            const json = await response.json();
+
+            if (json.success === true) {
+                this.setState({
+             listExpenses: json.data
+                })
+            }
+          } catch (error) {}
+          try {
+            const response = await fetch(`http://localhost:8000/api/transactions/find-by-type/income?token=${token}`);
+            const json = await response.json();
+
+            if (json.success === true) {
+                this.setState({
+             listIncomes: json.data
+                })
+            }
+          } catch (error) {}
+        }
+    }
+    
+  
+    calculateIncome=(incomes)=>{
+        incomes=0;
+    for(let i=0;i<this.state.listIncomes.length;i++){
+    
+        incomes = incomes +parseInt(this.state.listIncomes[i].amount)
+        
+    console.log(incomes)
+    }
+    return incomes;
+    }
+    calculateExpen=(expenses)=>{
+        expenses=0;
+    for(let i=0;i<this.state.listExpenses.length;i++){
+        expenses= expenses +parseInt(this.state.listExpenses[i].amount);
+    }
+    return expenses;
+    }
 
 
 
     render(){
         return(
             <div>
-               <div className="sider">
-                   
-                       
-                        
-
-                  
-                   
+               {/* <div className="sider">
                    </div> 
-                
+                 */}
                <div className="cont"> 
                
-                 <div className="home_page_main_container">
-                     <div className="transTable">
-                     <Table list={this.state.listIncome} name={this.state.titel[0]} ></Table>
-                     <Table list={this.state.listIncome} name={this.state.titel[1]} ></Table>
-                     
-                         </div>  
+                    <div className="home_page_main_container">
+                        <div className="transTable">
+                        <TableForm list={this.state.listIncomes} name={this.state.tableTitle[0]} ></TableForm>
+                        <TableForm list={this.state.listExpenses} name={this.state.tableTitle[1]} ></TableForm>
+                    </div>  
                 
-                <Total income={this.calculateIncome(this.state.income)}
+                    <Total incomes={this.calculateIncome(this.state.incomes)}
 
 
-                 expences={this.calculateExpen(this.state.expences)}
+                 expenses={this.calculateExpen(this.state.expenses)}
                 
-                 total={((this.calculateIncome(this.state.income))-(this.calculateIncome(this.state.expences)))}
+                 total={((this.calculateIncome(this.state.incomes))-(this.calculateIncome(this.state.expenses)))}
                 
                 
                 ></Total>
-                    </div> 
+                     </div> 
                 
                 </div>
             </div>

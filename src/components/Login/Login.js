@@ -29,17 +29,18 @@ class Login extends Component {
                 console.log("done")
                 localStorage.setItem('token', result.token)
                 this.props.handleLogin()
-                alert("You account has been created! \n You can Log In now!");
+                
             } 
             else 
             {
-                console.log("error")
+                console.log("error");
+                alert("Incorrect email or password");
             }
         } 
         catch (err) 
         {
             console.log('err', err)
-            alert("\t\tYour account has not been created! \n Please re-register with all the exact information.");
+            alert("Incorrect email or password");
         } 
     }
 

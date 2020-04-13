@@ -9,16 +9,9 @@ import './Table.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-function TabelForm(props) {
+function TableForm(props) {
 
 
-
-
-
-
-
-
-  console.log(props)
 
   return (
 
@@ -29,25 +22,32 @@ function TabelForm(props) {
       <Table responsive>
         <thead>
           <tr>
-            <th>#</th>
-            <th>Category</th>
-            <th>Titel</th>
+           {/*  <th>#</th> */}
+            <th>Title</th>
             <th>Description</th>
-            <th>Date</th>
-            <th>Ammount</th>
-
+            <th>Category</th>
+            <th>Start date</th>
+            <th>End date</th>
+            <th>Interval</th>
+            <th>Amount</th>
+            <th>Currency</th>
           </tr>
         </thead>
         <tbody>
         {props.list.map((item,index)=>
-             <tr key={index}>
-             <th scope="row">{item.ID}</th>
-           <td>{item.category}</td>
-           <td>{item.Description}</td>
-           <td>{item.Title}</td>
-           <td>{item.Date}</td>
-           <td>{item.Ammount}</td>
-          </tr>
+             {
+            return <tr key={index}>
+
+              <td>{item.title}</td>
+              <td>{item.description}</td>
+              <td>{item.category}</td>
+              <td>{item.start_date}</td>
+              <td>{item.end_date}</td>
+              <td>{item.interval}</td>
+              <td>{item.amount}</td>
+              <td>{item.currency}</td>
+            </tr>;
+          }
            )}
           
 
@@ -55,7 +55,7 @@ function TabelForm(props) {
       </Table></div>
   );
 }
-export default TabelForm
+export default TableForm
 
 
 
