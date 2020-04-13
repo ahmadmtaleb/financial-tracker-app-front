@@ -74,7 +74,7 @@ class Register extends Component
         
         try 
         {
-            const response = await fetch(`http://127.0.0.1:8000/api/register/?name=${JSON.stringify(this.state.name)}&email=${JSON.stringify(this.state.email)}&password=${JSON.stringify(this.state.password)}&currency_id=${parseInt(this.state.currency_id)}`);
+            const response = await fetch(`http://localhost:8000/api/register/?name=${JSON.stringify(this.state.name)}&email=${JSON.stringify(this.state.email)}&password=${JSON.stringify(this.state.password)}&currency_id=${parseInt(this.state.currency_id)}`);
             // const requestOptions = {
             //     method: 'POST',
                 // headers: { 

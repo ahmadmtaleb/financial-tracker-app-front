@@ -16,14 +16,18 @@ export default class App extends  React.Component {
   constructor(props){
     super(props);
     this.state={
-      UserName:"Mahmoud"
+      UserName:"Mahmoud",
+      login:false
     }
   }
   render(){
   return (
+    
     <>
       <BrowserRouter>
       <Switch>
+      { !this.state.login 
+                ?   <LandingPage /> :
         
         <Route path='/'>
           <div>
@@ -46,7 +50,7 @@ export default class App extends  React.Component {
           </Route>
           </div>
         </Route>
-        
+  }
         
         </Switch></BrowserRouter>
 
