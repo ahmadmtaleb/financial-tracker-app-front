@@ -13,13 +13,20 @@ import Header from '../src/components/Header/Header'
 
 export default class App extends  React.Component {
 
+<<<<<<< HEAD
   constructor(props){
     super(props);
     this.state={
       UserName:"Mahmoud",
       login:false
+=======
+    constructor(props){
+      super(props);
+      this.state={
+        UserName:"Mahmoud"
+      }
+>>>>>>> d0a3294e27437f03e4c156b392231b226b1acbf4
     }
-  }
   render(){
   return (
     
