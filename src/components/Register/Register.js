@@ -8,48 +8,64 @@ class Register extends Component
         super(props);
         this.state = 
         {
+            currencies_list: [],
             name:'',
             email: '',
             password: '',
-            currency:''
+            currency_id: ''
         }
     }
+    async componentDidMount() {
+        const response = await fetch('http://127.0.0.1:8000/api/currencies/');
+        const json = await response.json();
+
+        if (json.success === true) {
+            this.setState({
+                currencies_list: json.data
+            })
+        }
+    }
+
+
     onNameChange(event)
     {
         this.setState({name:event.target.value})
     }
     onNameClickHanlder (event)
     {
-        var popup = document.getElementById("namePopup");
+        var popup = document.getElementById("namePopup_ah");
         popup.classList.toggle("show");
     }
+
     onEmailChange(event)
     {
         this.setState({email:event.target.value})
     }
     onEmailClickHanlder (event)
     {
-        var popup = document.getElementById("emailPopup");
+        var popup = document.getElementById("emailPopup_ah");
         popup.classList.toggle("show");
     }
+
     onPasswordChange(event)
     {
         this.setState({password:event.target.value})
     }
     onPasswordlClickHanlder (event)
     {
-        var popup = document.getElementById("passwordPopup");
+        var popup = document.getElementById("passwordPopup_ah");
         popup.classList.toggle("show");
     }
+
     onRePasswordlClickHanlder (event)
     {
-        var popup = document.getElementById("repasswordPopup");
+        var popup = document.getElementById("repasswordPopup_ah");
         popup.classList.toggle("show");
     }
-    /* onAreaChange functon will set the state of the currency in order to save what the user entered */
+
     onCurrencyChange(event)
     {
-        this.setState({currency:event.target.value})
+        this.setState({currency_id:event.target.value})
     }
         
     async handleSubmit(event)
@@ -58,12 +74,32 @@ class Register extends Component
         
         try 
         {
-            const response = await fetch(`http://127.0.0.1:8000/api/register/?name=${this.state.name}&email=${this.state.email}&password=${this.state.password}&currency_id=${JSON.parse(this.state.currency_id)}`);
+            const response = await fetch(`http://127.0.0.1:8000/api/register/?name=${JSON.stringify(this.state.name)}&email=${JSON.stringify(this.state.email)}&password=${JSON.stringify(this.state.password)}&currency_id=${parseInt(this.state.currency_id)}`);
+            // const requestOptions = {
+            //     method: 'POST',
+                // headers: { 
+                //     'Content-Type': 'application/json',
+                    
+                // },
+                // body: {
+                //     'name': JSON.stringify(this.state.name),
+                //     'email': JSON.stringify(this.state.email),
+                //     'password': JSON.stringify(this.state.password),
+                //     'currency_id': parseInt(this.state.currency_id)
+                // }
+                // body: JSON.stringify({ name: 'this.state.name', email: 'this.state.email', password:'this.state.password', currency_id:'this.state.currency_id' })
+                // body: JSON.stringify({ name: 'name', email: 'email', password:'password', currency_id:'currency_id' })
+                // body: JSON.stringify({ name: 'name', email: 'email', password:'password', currency_id:'currency_id' })};
+            // const response = await fetch(`http://127.0.0.1:8000/api/register/`, requestOptions);
+            // const response = await fetch(`http://127.0.0.1:8000/api/register/?name=${JSON.stringify(this.state.name)}&email=${JSON.stringify(this.state.email)}&password=${JSON.stringify(this.state.password)}&currency_id=${parseInt(this.state.currency_id)}`, requestOptions);
+
+
+
             const result = await response.json();
             if (result.success) 
             {
                 console.log("done")
-                alert("You account has been created! \n You can Log In!");
+                alert("You account has been created! \n You can Log In now!");
             } 
             else 
             {
@@ -72,7 +108,6 @@ class Register extends Component
         } 
         catch (err) 
         {
-            console.log(err);
             alert("\t\tYour account has not been created! \n Please re-register with all the exact information.");
         } 
     
@@ -81,59 +116,64 @@ class Register extends Component
     render()
     {
         return(
-            <div className="register_body_container">
+            <div className="register_body_container_ah">
 
-                <div className="register_form_text">
+                <div className="register_form_text_ah">
                     <h2>Create an account <div><br /> Sign Up and control your expenses for free.</div></h2>
                 </div>
 
-                <form id="register_form_container" onSubmit={this.handleSubmit.bind(this)} method="POST">
+                <form id="register_form_container_ah" method="post" onSubmit={this.handleSubmit.bind(this)} >
 
-                    <div className="register_form_group">
-                        <label htmlFor="name" className="popup">
-                            <input id="name" type="text" placeholder="Name" className="register_form_group_item" value={this.state.name} onChange={this.onNameChange.bind(this)} onClick={this.onNameClickHanlder} required/>
-                            <span class="namepopuptext" id="namePopup">What's your name?</span>
+                    <div className="register_form_group_ah">
+                        <label htmlFor="name_ah" className="popup_ah">
+                            <input id="name_ah" type="text" placeholder="Name" className="register_form_group_item_ah" value={this.state.name} onChange={this.onNameChange.bind(this)} onClick={this.onNameClickHanlder} required/>
+                            <span class="namepopuptext_ah" id="namePopup_ah">What's your name?</span>
                             </label>
                     </div>
                         
-                    <div className="register_form_group">
-                        <label htmlFor="email" className="popup">
-                            <input id="email" type="email" aria-describedby="emailHelp" placeholder="Email address" className="register_form_group_item" required onClick={this.onEmailClickHanlder}/>
-                            <span class="emailpopuptext" id="emailPopup">You'll use this when you log in and if you ever need to reset your password.</span>
+                    <div className="register_form_group_ah">
+                        <label htmlFor="email_ah" className="popup_ah">
+                            <input id="email_ah" type="email" aria-describedby="emailHelp" placeholder="Email address" className="register_form_group_item_ah" required onChange={this.onEmailChange.bind(this)} onClick={this.onEmailClickHanlder}/>
+                            <span class="emailpopuptext_ah" id="emailPopup_ah">You'll use this when you log in and if you ever need to reset your password.</span>
                             </label>
                     </div>
 
-                    <div className="register_form_group">
-                        <label htmlFor="password" className="popup">
-                            <input id="passwor" type="password" aria-describedby="password" placeholder="Password" className="register_form_group_item" required onClick={this.onPasswordlClickHanlder}/>
-                            <span class="passwordpopuptext" id="passwordPopup">Enter a combination of at least six numbers, letters and punctuation marks (such as ! and &).</span>
+                    <div className="register_form_group_ah">
+                        <label htmlFor="password_ah" className="popup_ah">
+                            <input id="password_ah" type="password" aria-describedby="password" placeholder="Password" className="register_form_group_item_ah" required  onChange={this.onPasswordChange.bind(this)} onClick={this.onPasswordlClickHanlder}/>
+                            <span class="passwordpopuptext_ah" id="passwordPopup_ah">Enter a combination of at least six numbers, letters and punctuation marks (such as ! and &).</span>
                         </label>
                     </div>
                     
-                    <div className="register_form_group">
-                        <label htmlFor="re-password" className="popup">
-                            <input id="re-password" type="password" aria-describedby="password" placeholder="Re-enter password" className="register_form_group_item" required onClick={this.onRePasswordlClickHanlder}/>
-                            <span class="repasswordpopuptext" id="repasswordPopup">Re-enter the same password</span>
+                    <div className="register_form_group_ah">
+                        <label htmlFor="re-password_ah" className="popup_ah">
+                            <input id="re-password_ah" type="password" aria-describedby="password" placeholder="Re-enter password" className="register_form_group_item_ah" required onClick={this.onRePasswordlClickHanlder}/>
+                            <span class="repasswordpopuptext_ah" id="repasswordPopup_ah">Re-enter the same password</span>
                         </label>
                     </div>    
                     
-                    <div className="register_form_group">
-                        <label for="currency_form_area"></label>
-                            <select id="currency_form_area" name="currency" value={this.state.currency} onChange={this.onCurrencyChange.bind(this)} className="register_form_group_item" required>
-                                <option value="">Choose your currency</option>
-                                <option value="USD">USD</option>
+                    <div className="register_form_group_ah">
+                        <label for="currency_form_area_ah"></label>
+                            <select id="currency_form_area_ah" name="currency" className="register_form_group_item_ah" required onChange={this.onCurrencyChange.bind(this)}>
+                                <option>Choose your Currency</option>
+                            {
+                                this.state.currencies_list.map(currency => {
+                                    return <option key={currency.id} value={currency.id}>{currency.code}</option>
+                                })
+                            }
                             </select>
+
                     </div>
-                    <div className="register_form_group">
-                        <p className="register_form_group_item">
-                            By clicking Sign Up, you agree to our<div><br /></div> <a href="#" target="_blank" className="register_form_links">Terms</a>, <a href="#" target="_blank" className="register_form_links">Data Policy</a> and <a href="#" target="_blank" className="register_form_links">Cookie Policy</a>.
+                    <div className="register_form_group_ah">
+                        <p className="register_form_group_textitem_ah">
+                            By clicking Sign Up, you agree to our<div><br /></div> <a href="#" target="_blank" className="register_form_links_ah">Terms</a>, <a href="#" target="_blank" className="register_form_links_ah">Data Policy</a> and <a href="#" target="_blank" className="register_form_links_ah">Cookie Policy</a>.
                         </p>
                     </div>
-                        <button type="submit" id ="register_submit_btn">Sign Up</button>
-                    <div>
-                        <p className="register_form_slogan"> Grow <div><br /></div>Financially</p>
-                    </div>
+                        <button type="submit" id ="register_submit_btn_ah">Sign Up</button>
                 </form>
+                <div>
+                        <p className="register_form_slogan_ah"> Grow <div><br /></div>Financially</p>
+                </div>
                 
             </div>
         );

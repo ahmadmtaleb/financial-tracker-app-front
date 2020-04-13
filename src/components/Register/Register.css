@@ -1,4 +1,4 @@
-.register_body_container
+.register_body_container_ah
 {
     width:100%;
     display:flex;
@@ -6,42 +6,50 @@
     justify-content: space-evenly;
 
 }
-.register_form_group
+.register_form_group_ah
 {
     display:flex;
     justify-content: flex-end;
     margin-right: 175px;
 }
-.register_form_text
+.register_form_text_ah
 {
     display:flex;
     flex-wrap: wrap;
     justify-content:flex-end;
-    margin-right: 185px;
-    margin-top:40px;
-    
+    text-align:center;
+    margin-right: 185px; 
+    margin-top:40px;    
 }
-.register_form_text h2
+.register_form_text_ah h2
 {
     width: 400px;
     font-size: 36px;
 }
-.register_form_group_item
+.register_form_group_item_ah
 {
     width:400px;
     margin-top: 10px;
     line-height: 1rem;
     font-size: 15px;
-    
 }
-#currency_form_area
+.register_form_group_textitem_ah
 {
-    margin-right: 7px;
+  width:400px;
+  margin-top:20px;
+  text-align:center;
 }
-#register_submit_btn
+#currency_form_area_ah
+{
+    margin-right: 55px;
+    width:300px;
+    text-align: center;
+}
+#register_submit_btn_ah
 {
     position: relative;
-    left: 295px;
+    left: 900px;
+    margin-top: 20px;
     background-color: #01cb34;
     color: black;
     font-size: 16px;
@@ -55,15 +63,15 @@
 }
 
 
-#register_submit_btn:hover {
+#register_submit_btn_ah:hover {
   background-color: black;
   color: white;
 }
-.register_form_links
+.register_form_links_ah
 {
     text-decoration: none;
 }
-.register_form_slogan
+.register_form_slogan_ah
 {
     font-size: 80px;
     position: absolute;
@@ -72,7 +80,7 @@
     font-family: sans-serif;
 }
 /*****************POPUP name******************/
-.popup {
+.popup_ah {
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -83,7 +91,7 @@
   }
   
   /* The actual popup */
-  .popup .namepopuptext {
+  .popup_ah .namepopuptext_ah {
     visibility: hidden;
     width: 200px;
     background-color: #99ff66;
@@ -100,7 +108,7 @@
   }
   
   /* Popup arrow */
-  .popup .namepopuptext::after {
+  .popup_ah .namepopuptext_ah::after {
     content: "";
     position: absolute;
     top: 35%;
@@ -112,7 +120,7 @@
   }
   
   /* Toggle this class - hide and show the popup */
-  .popup .show {
+  .popup_ah .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
@@ -130,7 +138,7 @@
   }
   
  /*****************POPUP email******************/
-.popup {
+.popup_ah {
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -141,7 +149,7 @@
   }
   
   /* The actual popup */
-  .popup .emailpopuptext {
+  .popup_ah .emailpopuptext_ah {
     visibility: hidden;
     width: 300px;
     background-color: #99ff66;
@@ -158,7 +166,7 @@
   }
   
   /* Popup arrow */
-  .popup .emailpopuptext::after {
+  .popup_ah .emailpopuptext_ah::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -170,7 +178,7 @@
   }
   
   /* Toggle this class - hide and show the popup */
-  .popup .show {
+  .popup_ah .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
@@ -188,7 +196,7 @@
   }
 
 /*****************POPUP password******************/
-.popup {
+.popup_ah {
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -199,7 +207,7 @@
   }
   
   /* The actual popup */
-  .popup .passwordpopuptext {
+  .popup_ah .passwordpopuptext_ah {
     visibility: hidden;
     width: 300px;
     background-color: #99ff66;
@@ -216,7 +224,7 @@
   }
   
   /* Popup arrow */
-  .popup .passwordpopuptext::after {
+  .popup_ah .passwordpopuptext_ah::after {
     content: "";
     position: absolute;
     top: 60%;
@@ -228,7 +236,7 @@
   }
   
   /* Toggle this class - hide and show the popup */
-  .popup .show {
+  .popup_ah .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
@@ -246,7 +254,7 @@
   }
 
   /*****************POPUP repassword******************/
-.popup {
+.popup_ah {
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -257,7 +265,7 @@
   }
   
   /* The actual popup */
-  .popup .repasswordpopuptext {
+  .popup_ah .repasswordpopuptext_ah {
     visibility: hidden;
     width: 300px;
     background-color: #99ff66;
@@ -274,7 +282,7 @@
   }
   
   /* Popup arrow */
-  .popup .repasswordpopuptext::after {
+  .popup_ah .repasswordpopuptext_ah::after {
     content: "";
     position: absolute;
     top: 40%;
@@ -286,7 +294,7 @@
   }
   
   /* Toggle this class - hide and show the popup */
-  .popup .show {
+  .popup_ah .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
