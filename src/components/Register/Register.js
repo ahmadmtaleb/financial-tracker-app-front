@@ -74,27 +74,9 @@ class Register extends Component
         
         try 
         {
-            const response = await fetch(`http://127.0.0.1:8000/api/register/?name=${JSON.stringify(this.state.name)}&email=${JSON.stringify(this.state.email)}&password=${JSON.stringify(this.state.password)}&currency_id=${parseInt(this.state.currency_id)}`);
-            // const requestOptions = {
-            //     method: 'POST',
-                // headers: { 
-                //     'Content-Type': 'application/json',
-                    
-                // },
-                // body: {
-                //     'name': JSON.stringify(this.state.name),
-                //     'email': JSON.stringify(this.state.email),
-                //     'password': JSON.stringify(this.state.password),
-                //     'currency_id': parseInt(this.state.currency_id)
-                // }
-                // body: JSON.stringify({ name: 'this.state.name', email: 'this.state.email', password:'this.state.password', currency_id:'this.state.currency_id' })
-                // body: JSON.stringify({ name: 'name', email: 'email', password:'password', currency_id:'currency_id' })
-                // body: JSON.stringify({ name: 'name', email: 'email', password:'password', currency_id:'currency_id' })};
-            // const response = await fetch(`http://127.0.0.1:8000/api/register/`, requestOptions);
-            // const response = await fetch(`http://127.0.0.1:8000/api/register/?name=${JSON.stringify(this.state.name)}&email=${JSON.stringify(this.state.email)}&password=${JSON.stringify(this.state.password)}&currency_id=${parseInt(this.state.currency_id)}`, requestOptions);
-
-
-
+            const response = await fetch(`http://127.0.0.1:8000/api/register/?name=${this.state.name}&email=${this.state.email}&password=${this.state.password}&currency_id=${this.state.currency_id}`, {
+                method: 'POST'
+            });
             const result = await response.json();
             if (result.success) 
             {
@@ -108,6 +90,7 @@ class Register extends Component
         } 
         catch (err) 
         {
+            console.log('err', err)
             alert("\t\tYour account has not been created! \n Please re-register with all the exact information.");
         } 
     

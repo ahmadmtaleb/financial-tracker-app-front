@@ -9,7 +9,7 @@ class LandingPage extends Component
     {
         return(
             <div>
-                <Login />
+                <Login handleLogin={this.props.handleLogin} />
                 <div className="LandingPage_main_ah">
                     <Register />
                 </div>
