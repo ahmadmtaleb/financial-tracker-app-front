@@ -1,0 +1,30 @@
+*{
+    text-align: center;
+}
+.slide{
+    position: fixed;
+    background-color:teal;
+}
+
+.links{
+    color: white;
+    text-decoration: none;
+    border: none;
+   
+}
+.nait{
+    margin-bottom: 40px;
+}
+:hover.links{
+    text-decoration: none;
+    color:cyan;
+}
+.nait-logout{
+    margin-top: 160px;}
+    .namef{
+        color: seashell;
+        
+    }
+    .userN{
+        margin-bottom: 80px;
+    }
