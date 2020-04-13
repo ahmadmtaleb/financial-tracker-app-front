@@ -31,11 +31,10 @@ export default class App extends React.Component {
         this.setState({
           loggedIn: true
         })
-      } catch (error) {
-
-      }
+      } catch (error) {}
     }
   }
+  
   handleLogin =  () => {
     this.setState({
       loggedIn: true
@@ -43,7 +42,8 @@ export default class App extends React.Component {
   }
 
 
-  render() {
+  render() 
+  {
     return (
       <>
         <BrowserRouter>
