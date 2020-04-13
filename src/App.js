@@ -1,9 +1,17 @@
 import React from 'react';
 import LandingPage from './pages/LandingPage/LandingPage';
 import './App.css';
+import { BrowserRouter,Switch, Route } from 'react-router-dom';
+import Sidebar from './components/sideNav/SideNav';
+import Home from './pages/HomePage/HomePage';
+import Transaction from './pages/TransactionPage/TransactionPage';
+import Saving from './pages/SavingPage/SavingPage';
+import ReportPage from './pages/ReportPage/ReportPage';
+import CategoryPage from './pages/CategoryPage/CategoryPage';
+import Header from '../src/components/Header/Header'
 
 
-class App extends  React.Component {
+export default class App extends  React.Component {
 
   constructor(props){
     super(props);
@@ -46,6 +54,3 @@ class App extends  React.Component {
     </>
   );
 }}
-export default App;
-
-

@@ -1,8 +1,9 @@
 
-import React from 'react'
+import React from 'react';
 import SideNav, {  NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-import './SideNav.css'
+import './SideNav.css';
+
 import {
    
     Link
@@ -83,9 +84,4 @@ function SideBar (props){
 </div>
     )
 }
-export default SideBar
-
-
-
-
-
+export default SideBar;
