@@ -35,17 +35,21 @@ export default class App extends React.Component {
         })
       } catch (error) {}
     
-      try{
-        const response = await fetch(`http://127.0.0.1:8000/api/check-user?token=${token}`, {method:"POST"});
-        const json = await response.json();
-        if (json.success === true) {
-            this.setState({
-                UserName: json.data.name
-            })
-        }
-      }
-      catch(error){}
+     this.getUser();
     }
+  }
+   getUser=async()=>{
+    try{
+      const token = localStorage.getItem('token');
+      const response = await fetch(`http://127.0.0.1:8000/api/check-user?token=${token}`, {method:"POST"});
+      const json = await response.json();
+      if (json.success === true) {
+          this.setState({
+              UserName: json.data.name
+          })
+      }
+    }
+    catch(error){}
   }
   
   handleLogin =  () => {
