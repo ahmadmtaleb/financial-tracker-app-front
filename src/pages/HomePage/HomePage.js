@@ -87,7 +87,7 @@ export default class Home extends React.Component{
 
                  expenses={this.calculateExpen(this.state.expenses)}
                 
-                 total={((this.calculateIncome(this.state.incomes))-(this.calculateIncome(this.state.expenses)))}
+                 total={((this.calculateIncome(this.state.incomes))-(this.calculateExpen(this.state.expenses)))}
                 
                 
                 ></Total>

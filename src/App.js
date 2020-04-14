@@ -16,8 +16,9 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      UserName: "Mahmoud",
+      UserName: '',
       loggedIn: false,
+      info: []
     }
   }
   async componentDidMount() {
@@ -29,16 +30,33 @@ export default class App extends React.Component {
         const result = await response.json();
 
         this.setState({
-          loggedIn: true
+          loggedIn: true,
+          
         })
       } catch (error) {}
+    
+      try{
+        const response = await fetch(`http://127.0.0.1:8000/api/check-user?token=${token}`, {method:"POST"});
+        const json = await response.json();
+        if (json.success === true) {
+            this.setState({
+                UserName: json.data.name
+            })
+        }
+      }
+      catch(error){}
     }
   }
   
   handleLogin =  () => {
+    
     this.setState({
       loggedIn: true
     })
+  }
+  handleLogout=()=>{
+    localStorage.removeItem("token");
+    this.setState({loggedIn: false})
   }
 
 
@@ -53,7 +71,7 @@ export default class App extends React.Component {
 
             <div>
             <Header></Header>
-            <Sidebar name={this.state.UserName}></Sidebar>
+            <Sidebar name={this.state.UserName} onClick={this.handleLogout}></Sidebar>
 
             <div>
 

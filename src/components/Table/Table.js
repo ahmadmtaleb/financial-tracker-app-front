@@ -40,12 +40,13 @@ function TableForm(props) {
 
               <td>{item.title}</td>
               <td>{item.description}</td>
-              <td>{item.category}</td>
+              <td>{item.name}</td>
               <td>{item.start_date}</td>
               <td>{item.end_date}</td>
               <td>{item.interval}</td>
               <td>{item.amount}</td>
-              <td>{item.currency}</td>
+              <td>{item.code}</td>
+              
             </tr>;
           }
            )}

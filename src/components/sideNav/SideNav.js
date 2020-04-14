@@ -8,6 +8,7 @@ import {
    
     Link
   } from "react-router-dom";
+import { Button } from 'antd';
  
 
 function SideBar (props){
@@ -68,14 +69,9 @@ function SideBar (props){
         </NavItem></Link>
         
         
-       <Link className="side_nav_links" to='/Landing'> <NavItem className="side_nav_nait-logout" eventKey="logout" >
-            <NavIcon>
-                <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
-            </NavIcon>
-            <NavText>
-                Logout
-            </NavText>
-        </NavItem></Link>
+        <NavItem className="side_nav_nait-logout" eventKey="logout" >
+            <Button type="danger" onClick={props.onClick}>logout</Button>
+        </NavItem>
        
         
        

@@ -83,6 +83,12 @@ class Register extends Component
             {
                 console.log("done")
                 alert("Your account has successfully been created! \n You can Log In now!");
+                this.setState({
+                    name:'',
+                    email: '',
+                    password: '',
+                    currency_id: ''
+                })
             } 
             else 
             {
